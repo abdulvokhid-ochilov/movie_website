@@ -6,7 +6,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
 
-API_KEY = "Your movie api key"
+API_KEY = "API KEY from Moviedb"
 
 
 app = Flask(__name__)
@@ -44,6 +44,7 @@ class AddMovieForm(FlaskForm):
 
 @app.route("/")
 def home():
+
     all_movies = Book.query.order_by(Book.rating).all()
 
     # This line loops through all the movies
